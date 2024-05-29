@@ -1,0 +1,202 @@
+<LoginScreen>:
+    name: 'loginscreen'
+    md_bg_color: '#FCAA22'
+    MDFloatLayout:
+        Image:
+            source: 'foto.png'
+            size_hint: (0.7, 0.7)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+        MDLabel:
+            text: 'Entrar'
+            text_color: 0, 22, 62, 53
+            font_size: dp(23)
+            bold: True
+            halign: 'center'
+            pos_hint: {'center_x': 0.2, 'center_y': 0.47}
+        MDTextFieldRect:
+            size_hint: 0.8, None
+            height: dp(32)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            hint_text: 'Email'
+        MDTextFieldRect:
+            size_hint: 0.8, None
+            height: dp(32)
+            password: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            hint_text: 'Senha'
+        
+        MDRaisedButton:
+            text: 'Login'
+            text_color: '#775D2D'
+            md_bg_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            size_hint_x: .8
+            elevation:0
+            on_release: root.manager.current = 'começar'
+    
+<Receitas>:
+    name: 'receitas'
+    FloatLayout:
+        MDTopAppBar:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.967}
+            elevation: 0
+            md_bg_color: '#FCAA22'
+            MDLabel:
+                text: 'MadBit'
+                bold: True
+                halign: 'center'
+                font_size: dp(20)
+                pos_hint: {'center_x': 0.5, 'center_y': 0.97}
+                theme_text_color: 'Custom'
+                text_color: 1, 1, 1 ,1
+        MDCard:
+            size_hint: (0.87, 0.27)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+            on_release: 
+                root.manager.current = 'receitapudim'
+                root.manager.transition.direction = 'left'
+                        
+            FitImage:
+                source: 'pudim.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size_hint: 1, 1
+                radius: 15
+        MDCard:
+            size_hint: (0.87, 0.27)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+            on_release: 
+                root.manager.current = 'receitacupcake'
+                root.manager.transition.direction = 'left'
+                        
+            FitImage:
+                source: 'cupcake.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size_hint: 1, 1
+                radius: 15
+        MDCard:
+            size_hint: (0.87, 0.27)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+            on_release: 
+                root.manager.current = 'receitapaodemel'
+                root.manager.transition.direction = 'left'
+                        
+            FitImage:
+                source: 'paodemel.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size_hint: 1, 1
+                radius: 15
+        MDFillRoundFlatButton:
+            text: 'Pudim'
+            md_bg_color: '#FCAA22'
+            text_color: 1,1,1,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+            size_hint_x: .8
+            elevation:0
+            on_release: 
+                root.manager.current = 'receitapudim'
+                root.manager.transition.direction = 'left'
+        MDFillRoundFlatButton:
+            text: 'Cupcake'
+            md_bg_color: '#FCAA22'
+            text_color: 1,1,1,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+            size_hint_x: .8
+            elevation:0
+            on_release: 
+                root.manager.current = 'receitacupcake'
+                root.manager.transition.direction = 'left'
+        MDFillRoundFlatButton:
+            text: 'Pão de mel'
+            md_bg_color: '#FCAA22'
+            text_color: 1,1,1,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.05}
+            size_hint_x: .8
+            elevation:0
+            on_release: 
+                root.manager.current = 'receitapaodemel'
+                root.manager.transition.direction = 'left'
+<Pudim>:
+    name: 'receitapudim'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'receitapudim.png'
+                allow_stretch: True
+                keep_ratio: False
+
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.073, 'center_y': 0.965}
+            on_release: 
+                root.manager.current = 'receitas'
+                root.manager.transition.direction = 'right'
+<CupCake>:
+    name: 'receitacupcake'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'receitacupcake.png'
+                allow_stretch: True
+                keep_ratio: False
+
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.073, 'center_y': 0.965}
+            on_release: 
+                root.manager.current = 'receitas'
+                root.manager.transition.direction = 'right'
+<PaoDeMel>:
+    name: 'receitapaodemel'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'receitapaodemel.png'
+                allow_stretch: True
+                keep_ratio: False
+
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.073, 'center_y': 0.965}
+            on_release: 
+                root.manager.current = 'receitas'
+                root.manager.transition.direction = 'right'
+
+<Comecar>:
+    name: 'começar'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'comecar.jpeg'
+                allow_stretch: True
+                keep_ratio: False
+        MDFillRoundFlatButton:
+            text: 'Começar'
+            md_bg_color: '#696825'
+            text_color: 1,1,1,1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.42}
+            size_hint_x: .4
+            elevation:0
+            on_release: 
+                root.manager.current = 'receitas'
+                root.manager.transition.direction = 'left'
